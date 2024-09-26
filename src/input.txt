@@ -1,25 +1,32 @@
 
-insert 111
-             insert 23
+insert 4 Remote 25 98 82
 
-insert 99
-insert         4
+insert 110  In-Office 67      20 32
+             insert 23 Remote    40 56
+       insert 23 Remote    40 56 23
+insert 1000 Remote    40 56
+insert 1000 Remote    40 56 34
 
 isEmpty
 
-    insert     111
+    search     337 Remote 40  58 60
+    search 4 Remote 25 98 82
+
 
 print
 
 
-search 9
+search 23 Remote    40 56    23
+search 23 Remote    40 56
+search 24 Remote    40 56    23
 
-remove 23
+remove 110 In-Office 67      20 32
+remove 111 In-Office 64 88 57
+remove 110 In-ffice 67      20 32
+remove 20 In-Office 67      20
 
-remove 4
-remove 999999
 isEmptyasfh
 print
 
-insert 123
+insert 905 Remote 36      66   64
 print
