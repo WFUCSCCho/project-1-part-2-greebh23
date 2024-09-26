@@ -3,7 +3,7 @@
  * @brief This program implements the Node class. It checks the value of
  * every node and checks if the node has any left or right children.
  * @author Blythe Greene
- * @date: September 25, 2024
+ * @date: September 26, 2024
  ***********************************************************************/
 public class Node<T extends Comparable<T>> implements BinNode<T>{
     private T element;//generic type

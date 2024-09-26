@@ -3,14 +3,12 @@
  * @brief This program implements the Parser class. It reads an output
  * file and creates an output file.
  * @author Blythe Greene
- * @date: September 25, 2024
+ * @date: September 26, 2024
  ***********************************************************************/
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-
-///cre own inut file
 
 public class Parser {
 
@@ -49,9 +47,8 @@ public class Parser {
             //ArrayList<RemoteWork> workHoursList = new ArrayList<RemoteWork>;
             //loop through each line of CSV file
             while(inputHoursScanner.hasNext()){
-                String data = "insert," + inputHoursScanner.nextLine();//line = ln
+                String data = "insert," + inputHoursScanner.nextLine();//insert is at beginning of every entry
                 String[] parts = data.split(","); // split the string into multiple parts
-                //System.out.println(parts);
                 RemoteWork r;
                 //Insert data into BST
                 operate_BST(parts);
@@ -120,20 +117,14 @@ public class Parser {
     // Find out the next command and employ the BST
     public void operate_BST(String[] command) {
         RemoteWork r = new RemoteWork();
-        //System.out.println(Arrays.toString(command));
+        //Length is 6 since have command in front of 5 entries
         if(command.length == 6){
-            //System.out.println(command[1]);
+            //Start at 1 since first command for insert, search, etc... is at command[0].
             r = new RemoteWork(Integer.parseInt(command[1]), command[2],
                     Integer.parseInt(command[3]), Integer.parseInt(command[4]),
                     Integer.parseInt(command[5]));
         }
-        /*
-        else if(command.length == 2){
-            //System.out.println(command[1]);
-            r.setHours_Worked_Per_Week(Integer.parseInt(command[1]));
-        }
-        */
-
+        //Different cases for editing data
         switch (command[0]) {
             //Every case below is their own command.
             //call writeToFile
@@ -174,7 +165,6 @@ public class Parser {
             default -> writeToFile("Invalid Command", "./result.txt");
         }
     }
-
 
     // Implement the writeToFile method
     // Generate the result file from the output of the command

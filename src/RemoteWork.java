@@ -1,10 +1,18 @@
+/**********************************************************************
+ * @file RemoteWork.java
+ * @brief This program creates RemoteWork objects and their attributes.
+ * This program also contains the getter methods for all the variables and
+ * a compareTo method.
+ * @author Blythe Greene
+ * @date: September 26, 2024
+ ***********************************************************************/
 public class RemoteWork implements Comparable<RemoteWork>{
+    //Different data entries in CSV file:
     private Integer Employee_ID;
     private String Employment_Type;
     private Integer Hours_Worked_Per_Week;
     private Integer Productivity_Score;
     private Integer Well_Being_Score;
-    private Integer hours;
 
 
     // default constructor
@@ -14,7 +22,6 @@ public class RemoteWork implements Comparable<RemoteWork>{
         this.Hours_Worked_Per_Week = 0;
         this.Productivity_Score = 0;
         this.Well_Being_Score = 0;
-
     }
 
     // constructor with parameters
@@ -36,6 +43,7 @@ public class RemoteWork implements Comparable<RemoteWork>{
         this.Well_Being_Score = r.Well_Being_Score;
     }
 
+    //This method should return true if the object is equal to the object passed as a parameter.
     public boolean equals(RemoteWork r){
         if(Integer.compare(this.Employee_ID, r.Employee_ID) != 0){
             return false;
@@ -55,7 +63,7 @@ public class RemoteWork implements Comparable<RemoteWork>{
         return true;
     }
 
-
+    //Getter methods for my variables
     public Integer getEmployee_ID() {
         return Employee_ID;
     }
@@ -64,6 +72,7 @@ public class RemoteWork implements Comparable<RemoteWork>{
         return Employment_Type;
     }
 
+    //This is the variable I am comparing
     public Integer getHours_Worked_Per_Week() {
         return Hours_Worked_Per_Week;
     }
@@ -75,6 +84,8 @@ public class RemoteWork implements Comparable<RemoteWork>{
     public Integer getWell_Being_Score() {
         return Well_Being_Score;
     }
+
+    //Setter methods for my variables.
 
     public void setEmployee_ID(Integer employee_ID) {
         Employee_ID = employee_ID;
@@ -96,19 +107,6 @@ public class RemoteWork implements Comparable<RemoteWork>{
         Well_Being_Score = well_Being_Score;
     }
 
-
-
-    public int compare(RemoteWork a, RemoteWork b) {
-        if(a.getHours_Worked_Per_Week() < b.getHours_Worked_Per_Week()) {
-            return -1;
-        }
-        if(a.getHours_Worked_Per_Week() > b.getHours_Worked_Per_Week()) {
-            return 1;//will swap the hours
-        } else {
-            return 0;
-        }
-    }
-
     //The method toString() returns a String version of the information
     //stored in the class
     @Override
@@ -120,6 +118,10 @@ public class RemoteWork implements Comparable<RemoteWork>{
         return WorkInfo;
     }
 
+    // This method should return a negative number if the object is less
+    // than the object passed as a parameter, a positive number if the
+    // object is greater than the object passed as a parameter,
+    // and 0 if the objects are equal.
     @Override
     public int compareTo(RemoteWork obj) {
         int h = this.getHours_Worked_Per_Week().compareTo(obj.getHours_Worked_Per_Week());
@@ -127,7 +129,7 @@ public class RemoteWork implements Comparable<RemoteWork>{
             if (this.equals(obj)) {
                 return 0;
             }
-            return 1;
+            return -1;
         }
         else{
             return h;

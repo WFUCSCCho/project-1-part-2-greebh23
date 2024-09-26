@@ -3,7 +3,7 @@
  * @brief This program implements the BSTIterator and BST classes. The iterator class
  * iterates over the tree and the BST class alters the tree.
  * @author Blythe Greene
- * @date: September 25, 2024
+ * @date: September 26, 2024
  ***********************************************************************/
 import java.util.Stack;
 
